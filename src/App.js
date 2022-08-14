@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { Fragment } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { FoodComponent } from "./Components/Router/Router";
+import { Layout } from "./Components/Layout/DefaultLayout/Layout";
+import className from "classnames/bind";
+import style from "./App.module.scss";
 
+const cx = className.bind(style);
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className={cx("swapper")}>
+        <Routes>
+          {FoodComponent.map((food, index) => {
+            const LayoutItem = food.check ? Fragment : Layout;
+            const Components = food.component;
+            return (
+              <Route
+                key={index}
+                path={food.path}
+                element={
+                  <LayoutItem>
+                    <Components />
+                  </LayoutItem>
+                }
+              />
+            );
+          })}
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 

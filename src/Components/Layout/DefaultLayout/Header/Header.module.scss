@@ -1,0 +1,25 @@
+.swapper{
+   display:flex;
+   align-items:center;
+   justify-content:space-between;
+   padding-top:50px;
+   margin: 0 25px 0 5px;
+   h1{
+    font-size:2rem
+   }
+   @media screen and (min-width: 768px) and (max-width: 1024px){
+      h1{
+         margin-left:20px;
+      }
+      
+    }
+   @media (max-width: 768px){
+      display:block;
+      padding-top:40px;
+      h1{
+         font-size:2.7rem;
+         margin-left:20px;
+      }
+
+   }
+}

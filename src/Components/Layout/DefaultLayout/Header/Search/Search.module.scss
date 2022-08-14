@@ -1,0 +1,40 @@
+.Search {
+    width: 500px;
+    @media (max-width: 768px) {
+        width: 100%;
+       margin-left:10px;
+       
+    }
+    input {
+        width: 100%;
+        height: 40px;
+        border-bottom: 2px solid #666;
+        font-size: 1.2rem;
+        color: #000;
+        caret-color: red;
+         padding : 0 10px;
+        @media (max-width: 768px) {
+            width: 100%;
+            margin-top: 50px ;
+            
+
+        }
+    }
+}
+.search-result {
+    width: 300px;
+    background-color: #fff;
+    box-shadow: rgb(0 0 0 / 91%) 0px 0px 5px -1px;
+    .result-item {
+        padding: 10px 10px;
+        cursor: pointer;
+        &:hover {
+            background-color: #ccc;
+            color: red;
+        }
+        p {
+            font-size: 1.1rem;
+            color: #000;
+        }
+    }
+}

@@ -1,0 +1,10 @@
+.swapper{
+    width:100%;
+    text-align:center;
+    font-size:3rem;
+    margin-top:50px;
+    @media (max-width: 768px){
+        font-size:2rem;
+
+    }
+}
